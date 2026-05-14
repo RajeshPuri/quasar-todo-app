@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* CSS Variables for Dark/Light mode */
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-card: #16213e;
+  --bg-hover: #1f2b47;
+  --color-primary: #e94560;
+  --color-secondary: #0f3460;
+  --text-primary: #eaeaea;
+  --text-secondary: #a0a0a0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --color-negative: #c0392b;
+  --active-conv-bg: rgba(233, 69, 96, 0.15);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --radius-lg: 20px;
+  --radius-md: 12px;
+}
+
+body.body--light {
+  --bg-primary: #f0f2f5;
+  --bg-card: #ffffff;
+  --bg-hover: #f8f9fa;
+  --color-primary: #e94560;
+  --color-secondary: #0f3460;
+  --text-primary: #1a1a2e;
+  --text-secondary: #7f8c8d;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --color-negative: #c0392b;
+  --active-conv-bg: rgba(233, 69, 96, 0.08);
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+#q-app {
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Global Component Overrides to match the screenshot */
+.q-card {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.q-field--filled .q-field__control {
+  background: var(--bg-hover);
+  border-radius: var(--radius-md);
+}
+
+.q-btn--unelevated {
+  border-radius: var(--radius-md);
+}
+
+/* Custom Navigation Segmented Control */
+.navigation-container {
+  background: var(--bg-card);
+  padding: 8px;
+  border-radius: var(--radius-lg);
+  display: inline-flex;
+  gap: 8px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+.nav-item {
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.nav-item.active {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+}
+
+.nav-item:hover:not(.active) {
+  background: var(--bg-hover);
+}
