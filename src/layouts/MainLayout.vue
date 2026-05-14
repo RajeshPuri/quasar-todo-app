@@ -62,20 +62,15 @@
 <script setup>
 import { ref } from "vue";
 import { useQuasar } from "quasar";
-import { useRouter } from "vue-router";
+import { useAuth } from "../composables/useAuth";
 
 const $q = useQuasar();
-const router = useRouter();
+const { logout } = useAuth();
 const activeTab = ref("todo");
 
 const toggleDark = () => {
   $q.dark.toggle();
   localStorage.setItem("combined-dark", String($q.dark.isActive));
-};
-
-const logout = () => {
-  localStorage.removeItem("combined-token");
-  router.push("/login");
 };
 </script>
 
